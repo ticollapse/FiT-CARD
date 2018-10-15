@@ -17,17 +17,18 @@ body{
 margin: 0;
 padding: 0;
 background-size: cover;
-background: url("bg4.jpg") no-repeat;  
+background: url("bg4.jpg");  
 font-family: sans-serif;
 }
 
 .cadEstabelecimento{
-	position: absolute;
+	position: relative;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%,-50%);
+	margin-top:100px;
+	transform: translate(-50%,0%);
 	width: 800px;
-	height: 620px;
+	height: auto;
 	padding: 80px 40px;
 	box-sizing: border-box;
 	background: rgba(0,0,0,.5);

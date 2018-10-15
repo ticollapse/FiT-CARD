@@ -44,7 +44,6 @@ function sendEstabelecimento(){
 	var arrayCategoria = document.getElementById("categoria").options;
 	var posicaoCategoria = document.getElementById("categoria").selectedIndex;
 	var nomeCategoria = arrayCategoria[posicaoCategoria].text;
-	alert( nomeCategoria);
 	
 	//Concatena a mensagem
 	var dataString = 'razaoSocial=' + razaoSocial  + '&nomeFantasia=' + nomeFantasia+ '&cnpj=' + cnpj + '&email=' + email + '&endereco=' + endereco + '&estado=' 
@@ -52,7 +51,7 @@ function sendEstabelecimento(){
 	
 	// Verifica se os campos foram preenchidos
 	if ( (razaoSocial == '' || cnpj == '') || (  (nomeCategoria == 'Supermercado')&&(razaoSocial == '' || cnpj == '' || telefone == '')   )   ) {
-	alert("Por Favor Preencha todos os campos"+dataString);
+	alert("Por Favor Preencha todos os campos");
 	}
 	else
 	{
@@ -65,11 +64,12 @@ function sendEstabelecimento(){
 			//Mensagem
 			data: dataString,
 			
-			cache: false,
-			success: function(html) {
-				alert(html);
-			}
+			cache: false
+           
+			
 		});
+		alert("Estabelecimento Cadastrado !")
+		
 	}
 	return false;
 }
