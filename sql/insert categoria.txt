@@ -1,0 +1,5 @@
+INSERT INTO categoria (`nome`, `descricao`) VALUES ('Borracharia', 'Borracharia');
+INSERT INTO categoria (`nome`, `descricao`) VALUES ('Oficina', 'Oficina');
+INSERT INTO categoria (`nome`, `descricao`) VALUES ('Posto', 'Posto');
+INSERT INTO categoria (`nome`, `descricao`) VALUES ('Restaurante', 'Restaurante');
+INSERT INTO categoria (`nome`, `descricao`) VALUES ('Supermercado', 'Supermercado');

@@ -1,0 +1,46 @@
+InnoDB - Mecanismos de armazenamento no MySQL
+
+create database fitcard;
+use fitcard;
+
+Create table if not EXISTS estabelecimento(
+    cnpj varchar(14) PRIMARY key NOT NULL,
+    razao_social varchar(255) NOT NULL,
+    nome_fantasia varchar(255),
+    email varchar(100),
+    endereco varchar(50),
+    cidade varchar(50),
+    id_uf tinyint,
+    telefone varchar(14),
+    data_cadastro date,
+    id_categoria tinyint,    
+    id_situacao tinyint,
+    agencia varchar(4),
+    conta varchar(6)
+    
+    )ENGINE=InnoDB;
+
+create table if not exists uf(
+	id tinyint auto_increment primary key,
+	sigla varchar(2) NOT NULL,
+    	nome varchar(30) NOT NULL
+    )ENGINE=InnoDB;
+
+create table if not exists categoria(
+    id tinyint auto_increment primary key,
+    nome varchar(40) NOT NULL,
+    descricao varchar(200) NOT NULL
+)ENGINE=InnoDB;
+
+
+create table if not exists situacao(
+    id tinyint auto_increment primary key,
+    nome varchar(20) NOT NULL,
+    descricao varchar(200) NOT NULL
+)ENGINE=InnoDB;
+    
+
+
+alter table estabelecimento add constraint fk_estabelecimento_id_uf foreign key (id_uf) references uf (id);
+alter table estabelecimento add constraint fk_estabelecimento_id_categoria foreign key (id_categoria) references categoria (id);
+alter table estabelecimento add constraint fk_estabelecimento_id_situacao foreign key (id_situacao) references situacao (id);
